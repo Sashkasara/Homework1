@@ -20,4 +20,12 @@ if (todayDateFullYear - dateYear > 18) {
     console.log ("polnoleten");
 } else if ( todayDateFullYear - dateYear <= 17) {
     console.log("maloleten");
+} else if (todayDateFullYear - dateYear == 18 && dateMonth < todayDateMonth) {
+    console.log("Polnoleten");
+} else if ( todayDateFullYear - dateYear == 18 && dateMonth > todayDateMonth) {
+    console.log("Maloleten");
+} else if (todayDateFullYear - dateYear == 18 && dateMonth == todayDateMonth && dateDate <= todayDateDate) {
+    console.log("Polnoleten");
+} else if (todayDateFullYear - dateYear == 18 && dateMonth == todayDateMonth && dateDate > todayDateDate) {
+    console.log("Maloleten")
 }
