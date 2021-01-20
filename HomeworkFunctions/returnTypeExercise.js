@@ -9,8 +9,8 @@ function dataType1() {
 }
 dataType1((new Object()));
 
-function dataType2() {
-    result = typeof (true);
+function dataType2(propetry) {
+    result = typeof (property);
     console.log(result);
     return result;
 }
