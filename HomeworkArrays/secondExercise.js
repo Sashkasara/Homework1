@@ -12,17 +12,16 @@ sumOfNumbers(fiveNumbers);
 
 
 
-// BONUS POINTS EXERCISE
-// let arrayNumbers = [1, 2, 3, "Is this a number", 5];
-// index = 0;
-// function validateNumber () {
-//     if ( numberArray[index] == !isNaN ) { // !isNan
-//         console.log("This is a valid number")
-//         index++;
-//     }
-//     else {
-//         console.log("This is not a number")
-//     }
-// }
-// validateNumber(arrayNumbers);
-
+//Bonus points exercise
+function validateNumber (arrayNumbers) {
+    for (let i = 0; i <= arrayNumbers.length; i++ ) {
+        if (typeof arrayNumbers[i]  === 'number' || arrayNumbers[i] === !isNaN ) {
+            console.log("This number " + arrayNumbers[i] + " is a number");     
+        }
+        else {
+            console.log("This is not a valid number")
+        }
+    }
+    
+}
+validateNumber([1, 2, 3, "Is this a number", 5]);

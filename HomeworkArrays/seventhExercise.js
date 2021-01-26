@@ -6,15 +6,15 @@
 // Output: Max: 11, Min: 3, Sum: 14
 
 
-let array = [ 5, 4, 56, 32, 60 ];
-function getNumbers() {
+
+function getNumbers(array) {
     let maxNumber = Math.max(...array);
     let minNumber = Math.min(...array);
     let sum = maxNumber + minNumber;
     console.log (`The number ${maxNumber} is the MAX number, the number ${minNumber} is the MIN number, and the sum is ${sum}`);
      
 }
-getNumbers();
+getNumbers(array = [ 5, 4, 56, 32, 60 ]);
 
 
 
