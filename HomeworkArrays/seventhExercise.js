@@ -14,21 +14,6 @@ function getNumbers(array) {
     console.log (`The number ${maxNumber} is the MAX number, the number ${minNumber} is the MIN number, and the sum is ${sum}`);
      
 }
-getNumbers(array = [ 5, 4, 56, 32, 60 ]);
+getNumbers(array = [ 5, 4, 56, 32, 60 ]); 
 
 
-
-// let array = [ 5, 4, 56, 32, 60, "What type is this"];
-// function getNumbers() {
-// i = 0;
-// let maxNumber = Math.max(...array);
-// let minNumber = Math.min(...array);
-// let sum = maxNumber + minNumber;
-// if (array[i] === Number) {
-//     console.log (`The number ${maxNumber} is the MAX number, the number ${minNumber} is the MIN number, and the sum is ${sum}`);
-// } else {
-//     console.log("This is not a number")
-// }
-// return sum;
-// }
-// getNumbers ();
