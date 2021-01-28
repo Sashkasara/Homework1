@@ -15,4 +15,4 @@ buttonSbm.addEventListener("click", function(){
 })
 
 
-// tuka probuvav na drugi razlicni nacini ama ne mi funcionira..
+
