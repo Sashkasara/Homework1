@@ -1,17 +1,18 @@
 // 1. Create a javascript function that will find all numbers divisable by 7 and 3 in a array from 1 to 100.
 
 
-function division(array){
-    let newArray = [];
-    for (let i = 1 ; i <= 100; i++){
-        if (i % 3 === 0 && i % 7 === 0){
-            newArray.push([i])
+function AllNumbers() {
+    var result = [];
+    for (let i= 1; i<101 ; i++) {
+        if (i % 3 === 0 && i % 7 === 0 ) {
+        
+            result.push(i);          
         }
-    }
-    return console.log (newArray);
-}
-division([]);
 
+    }
+    console.log(result);
+}
+var newArray = AllNumbers();
 // 2. Create a Javascript ATM machine. 
 // The ATM should have the following functions:
 // - make desposit (this function should add money to the users balance)
