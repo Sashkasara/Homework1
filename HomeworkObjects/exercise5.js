@@ -15,12 +15,12 @@ console.log(studentArray);
 let list= document.createElement("ul");
 document.body.appendChild(list);
 let newList = document.createElement("li");
-function printStudents(){
+function studentsFuntion(){
   for (let i=0; i < studentArray.length; i++) {
     list.appendChild(newList);
     newList.innerHTML = (`${studentArray[i].Name} ${studentArray[i].LastName} ${studentArray[i].age}`);
   }
 }
-printStudents();
+studentsFuntion();
 }, false)
 
