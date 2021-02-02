@@ -95,7 +95,7 @@ if (userFunction === 'Withdrawal') {
     }
     else {'please write only numbers'};
 };
-if (userFunction === 'Balance') {
+if (userFunction === 'Balance') {  
     console.log(`Your account balance is ${balance}`);
 };
 if (userFunction === 'Exit') {
@@ -104,3 +104,6 @@ if (userFunction === 'Exit') {
 }
 else {atm()};
 }
+
+
+//!
