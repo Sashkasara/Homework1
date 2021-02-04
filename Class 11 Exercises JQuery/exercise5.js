@@ -1,6 +1,6 @@
 document.getElementById("button").addEventListener("click", function() {
         $.ajax({
-            url:"https://jsonplaceholder.typicode.com/photos",
+            url:"https://jsonplaceholder.typicode.com/albums",
             success: function(result) {
                 let array = [];
                 for( let i=0; i < 100; i++){
@@ -11,13 +11,16 @@ document.getElementById("button").addEventListener("click", function() {
                         `
                             <ul>
                                 ${array.map((photo) => {
-    
+                                    if ( result.hasOwnProperty("omnis") ) {
+                        
+                                    }
                                     return (
+                                        
                                         `
                                             <li> ${photo.id}</li> < /br>
                                             <li> ${photo.title} </li> < /br>
-                                            <li> ${photo.url} </li> < /br>
-                                            <li> ${photo.title} </li> < /br>
+                                            
+                                    
                                         `
                                     )
                                 })}
