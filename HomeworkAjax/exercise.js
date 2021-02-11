@@ -1,33 +1,29 @@
-document.getElementById("button").addEventListener("click", function() {
-    $.ajax({
-        url:"https://jsonplaceholder.typicode.com/photos",
-        success: function(result) {
-            let array = [];
-            for( let i=0; i < 100; i++){
-                array.push(result[i])
-            }
-            if (array !== undefined && array.length > 0) {
-                $("#output").append (
-                    `
+document.getElementById("button").addEventListener("click", function(){
+    fetch("https://jsonplaceholder.typicode.com/posts")
+        .then(response => response.json())
+        .then(json => {
+            if (json !== undefined && json.length > 0) {
+                document.getElementById("output").innerHTML = (
+                    `   
+                        <h3>All albums with 'omnis' in their title:</h3>
                         <ul>
-                            ${array.map((photo) => {
-
+                            ${json.map((user, index) => {
+                                if (user.title.includes("omnis")){
                                 return (
                                     `
-                                        <li> ${photo.id}</li> < /br>
-                                        <li> ${photo.title} </li> < /br>
-                                        <li> ${photo.url} </li> < /br>
-                                        <li> ${photo.title} </li> < /br>
+                                        <li key=${index}>
+                                            title: ${user.title}<br>
+                                            </li><br>
+                                    
                                     `
                                 )
-                            })}
+                            }}).join("")}
                         </ul>
+                    
                     `
+
                 )
             }
-        },
-        error: function (error) {
-            console.error(error);
-        }
-    })
-}, false)
+        })
+        .catch(error => {console.log(error);});
+})
