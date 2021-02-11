@@ -15,26 +15,34 @@
 // * When the button is clicked generate a new ul element with the color, font size and items from the inputs 
 // > Items should be added separated by , in the input
 
+
+//Prv del
+
 let colorInput = document.getElementById("color");
 let fontSizeInput = document.getElementById("fontSize");
 let textInput = document.getElementById("text");
 
-let body = document.getElementsByTagName("body")
-
 
 document.getElementById("button").addEventListener("click", function(){
-    colorInput.style.color = "blue";
-    color = colorInput.value;
 
-    fontSizeInput.style.fontSize = "x-large";
-    fontSize = fontSizeInput.value;
+    let textInput = document.getElementById("text");
+    let fontSizeInput = document.getElementById("fontSize");
+    let colorInput = document.getElementById("color");
 
-    text = textInput.value;
-    document.body.innerHTML += `<h1>${fontSize} ${color} ${text}</h1>`
+    let header = document.createElement("h1");
+    document.body.appendChild(header);
+
+    header.innerHTML = `${textInput}`;
+    header.style.fontSize = `${fontSizeInput}`;
+    header.style.color = `${colorInput}`;
+
+
+    let result = document.createElement("p");
+    document.body.appendChild(result);
+
+
+
+    
 
 });
-
-document.getElementById("uoList").addEventListener("click", function(){
-
-})
 
