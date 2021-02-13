@@ -34,35 +34,46 @@ this.yearOfBirth= yearOfBirth;
 this.academy = academy;
 this.grades = studentGrades;
 
- let getAge = function(){
+this.getAge = function(){
 
-        let todayYear = new Date();
-        let dateYear = yearOfBirth.getFullYear;
-        let todayDateFullYear = todayYear.getFullYear;
-        return(todayDateFullYear - dateYear);
+    let todayYear = new Date();
+    let dateYear = yearOfBirth.getFullYear;
+    let todayDateFullYear = todayYear.getFullYear;
+    let age =(todayDateFullYear - dateYear);
+    return age;
     };
-    console.log(getAge());
+    console.log(this.getAge());
 
-    this.getInfo = function() {
-        return `This is student ${this.firstName} ${this.lastName} from the academy of ${this.academy}!`;
+this.getInfo = function() {
+        return `This is student ${this.firstName} ${this.lastName} Age:${this.age} from the academy of ${this.academy}!`;
     }
 
-    this.getGradesAverage = function(){
-        for(let item of this.grades) {      // ne znam kako od inputi da izvadam array so grades, 
-            result += item                  // probav da im dadam novi promenlivi kaj sto ke se smesteni grades
-        }                                   // kako na primer student1 = [2,3,4,5] ama nikako ne mi iskaca i valjda presmetkata ne mi e tocna
-        return result / this.grades.length;
+this.getGradesAverage = function(){
+    let sum = 0;
+    for (let i = 0; i < this.grades.length; i++){
+        sum += parseInt(this.grades[i], 10);                 
+        } 
+    let average = sum/this.grades.length;
+    let averageGrade = average.toFixed(2);                               
+    return `The average grade is: ${averageGrade}.`;
     }
 
 }
-// Second part
+// Second part // printing
 let studentsArray = [];
 function printStudents (array, element){
     element.innerHTML = "";
     for (let i = 0; i < array.length ; i++){
-        element.innerHTML += `<li> ${studentsArray[i].getInfo()}</li>`;
+        element.innerHTML += `<li> ${studentsArray[i].getInfo()}}</li>`;
     }
 }
+function clearForm() {
+    firstName.value = "";
+    lastName.value = "";
+    yearOfBirth.value = "";
+    academy.value = "";
+}
+
 save.addEventListener('click', function(){
     
     if(!firstName.value || !lastName.value || !yearOfBirth.value || !academy.value){
@@ -73,6 +84,6 @@ save.addEventListener('click', function(){
         studentsArray.push(new Students
         (firstName.value, lastName.value, parseInt(yearOfBirth.value), academy.value))
         printStudents(studentsArray, studentList);
-        
+        clearForm();
     }
 })
