@@ -1,53 +1,22 @@
 
 
-// let books = [{
-//         title: 'Bill Gates',
-//         author: 'The Road Ahead',   // Tuka probuvam nestoo amaaaaaaa............ 
-//         readingStatus: true
-//     },
-//     {
-//         secondTitle: 'Mockingjay: The Final Book of The Hunger Games',
-//         secondAuthor: 'Suzanne Collins',
-//         secondReadingStatus: false
-//     }];
+let titleInput = prompt("Enter a book title:");
+let authorInput = prompt("Enter the author:");
+let statusInput = prompt("Did you read that book? Enter true or false");
 
-//     if (prompt.val == author) {
-//         console.log(`You already read ${title} by ${this.author}`)
-//     }
-//     else if (prompt.val == secondTitle){
-//         console.log(`You already read ${secondTitle} by ${secondAuthor}`)
-//     }
+function BookObject(titleInput, authorInput, statusInput){
+    this.title = titleInput;
+    this.author = authorInput;
+    this.readingStatus = statusInput;
+    this.status = function (){
+        if (this.readingStatus == 'true'){
+            console.log(`Already read '${this.title}' by ${this.author}.`);
+        } else if(this.readingStatus == 'false'){
+            console.log(`You still need to read '${this.title}' by ${this.author}.`);
+        }
+    }
+} 
 
-// for (var i = 0; i < library.length; i++) 
-//    {
-//     var book = "'" + library[i].title + "'" + ' by ' + library[i].author + ".";
-//     if (library[i].readingStatus) {
-//       console.log("Already read " + book);
-//     } else
-//     {
-//      console.log("You still need to read " + book);
-//     }
-//    }
 
-// let input = document.getElementById("input").value    //PAIN!
-
-//     booksArray = [
-//         title = 'Bill Gates',
-//         author = 'The Road Ahead',
-//         readingStatus = true,
-//     ],
-//     [
-//         secondTitle = 'Mockingjay: The Final Book of The Hunger Games',
-//         secondAuthor = 'Suzanne Collins',
-//         secondReadingStatus = false
-//     ]
-//     document.getElementById("button").addEventListener("click", function(input){
-//         if (input == title) {
-//            return console.log(`You have already read ${title} by ${author}`)
-//         }
-//         else if (input == secondTitle) {
-//            return console.log(`You still need to read ${secondTitle} by ${secondAuthor}`)
-//         }
-     
-//     bookTitles(input)
-// })
+let result = new BookObject(titleInput, authorInput, statusInput);
+result.status();
