@@ -8,17 +8,23 @@
 </head>
 <body>
     <div>
-        <label for="color">Choose a color</label>
-        <input type="text" id="color">
-        <label for="fontSize">Enter Font-Size</label>
-        <input type="text" id="fontSize">
-        <label for="text">Enter a text</label>
-        <input type="text" id="text">
-
-        <button id="button">Generate</button>
-
-        
+        <input type="text" id="color" placeholder="Enter a color"><br/>
+        <input type="text" id="font-size" placeholder="Enter Font-Size"><br/>
+        <input type="text" id="text" placeholder="Enter text"><br/>
+        <button id="button">Click here to see the text</button>
     </div>
+    <div id="result"></div>
+    <br/>
+    <br />
+
+    <div>
+        <input type="text" id="secondColor" placeholder="Type in the color"><br/>
+        <input type="text" id="secondFontSize" placeholder="Type in the font-size. NOTE: Write only numbers"><br/>
+        <input type="text" id="secondText" placeholder= 'Type in items. NOTE Every item should be separated by ",".'><br/>
+        <button id="secondButton">Click to generate list of items</button>
+    </div>
+    <br/>
+    <div id="secondResult"></div>
 
     <script src="homework.js"></script>
 </body>
