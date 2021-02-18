@@ -2,7 +2,7 @@
 function someSimpleExample(){
     console.log("this is some dummy text")
     // let a = 5;
-    // let b=6; // NE VRAKJA REZULTATI
+    // let b=6; // NE VRAKJA REZULTATI //..
     // let sum = a+b;
 };
 // calling fun. without parameters
