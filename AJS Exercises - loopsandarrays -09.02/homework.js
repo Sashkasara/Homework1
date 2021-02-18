@@ -8,6 +8,8 @@
 // * When the button is clicked generate a new h1 element with the color, font size and text from the inputs
 
 
+
+
 let color = document.getElementById('color');
 let fontSize = document.getElementById('font-size');
 let text = document.getElementById('text');
@@ -59,7 +61,6 @@ secondButton.addEventListener('click', () => {
   let i = 0;
   let items = arrayItems(secondText.value);
   secondResult.innerHTML += `<ul id="list${i}"></ul>`
-  
   listOfElements = document.getElementById(`list${i}`);
   listConstructor(items, listOfElements, secondColor.value, secondFontSize.value);
   clearInput(secondColor, secondFontSize, secondText);
