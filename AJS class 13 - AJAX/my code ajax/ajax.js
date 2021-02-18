@@ -12,7 +12,7 @@ var myJSON = `{
 console.log(myJSON);
 
 let myObject = JSON.parse(myJSON);
-  // konvertira json string vo json object
+  // konvertira json string vo json object   //..
   console.log(myObject);
 
   // Plain JS request
