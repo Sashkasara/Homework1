@@ -18,6 +18,8 @@ let averageGradeHigherThan3 =
     arrayWithStudents.filter(student => student.averageGrade === 3)
                      .map(student => {
                          return {
+                             firstName: student.firstName,
+                             lastName: student.lastName,
                              averageGrade: student.averageGrade // vrakjanje samo na average grade
                          }
                      })
@@ -55,10 +57,12 @@ allFemaleStudentsAverage24 =
                      .filter(student => student.age > 24 )
                      .map( student => {
                          return{
-                             averageGrade: student.averageGrade 
+                            firstName: student.firstName,
+                            lastName: student.lastName,
+                            averageGrade: student.averageGrade,
                          }
                      })
-// console.log(allFemaleStudentsAverage24)
+console.log(allFemaleStudentsAverage24)
 
 
 // * All male students with a name starting with B and average grade over 2
