@@ -4,6 +4,7 @@
 // 2. The timer should stop counting when user presses the stop button.
 // 3. The timer should be reseted when the user presses the reset button.
 // The UI needs to be updated on every change of the state of the timer.
+//
 
 let stopWatch = {
     time: 0,
