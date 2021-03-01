@@ -4,8 +4,12 @@ let navigationService = {
     shipsBtn: document.getElementById("shipsBtn"),
     nextBtn: document.getElementById("nextBtn"),
     prevBtn: document.getElementById("prevBtn"),
+    firstPageButton: document.getElementById("firstPageButton"),
+    lastPageButton: document.getElementById("lastPageButton"),
     currentPage: 1,
     pageType: "",
+    lastPage: "",
+    
 
     // methods/functions
     init: function () {
@@ -53,21 +57,64 @@ let navigationService = {
             }
 
         });
+        // FIRST PAGE BUTTON
+        this.firstPageButton.addEventListener("click", function () {
+            
+            uiService.toggleLoader(true);
+            navigationService.currentPage = 1;
+
+            if (navigationService.pageType === "people") {
+                starWarsService.getPeople(navigationService.currentPage);
+            }
+            if (navigationService.pageType === "ships") {
+                starWarsService.getShips(navigationService.currentPage);
+            }
+
+        });
+        //LAST PAGE BUTTON
+        this.lastPageButton.addEventListener("click", function () {
+           
+            uiService.toggleLoader(true);
+            navigationService.lastPage;
+            navigationService.currentPage = navigationService.lastPage;
+          
+            if (navigationService.pageType === "people") {
+                starWarsService.getPeople(navigationService.lastPage);
+            }
+            if (navigationService.pageType === "ships") {
+                starWarsService.getShips(navigationService.lastPage);
+            }
+
+        });
+
     },
     togglePagingButtons: function (response) {
         if (response.next === null) {
             this.nextBtn.style.display = "none";
+            this.lastPageButton.style.display = "none";
         } else {
             this.nextBtn.style.display = "block";
+            this.lastPageButton.style.display = "block";
         }
 
         if (response.previous === null) {
             this.prevBtn.style.display = "none";
+            this.firstPageButton.style.display = "none";
         } else {
             this.prevBtn.style.display = "block";
+            this.firstPageButton.style.display = "block";
         }
+    },
+
+    lastPageCounter: function (response) {
+        
+        let result = Math.ceil(response / 10);
+        this.lastPage = result;
+        return result;
     }
+
 }
+
 
 let starWarsService = {
     // properties
