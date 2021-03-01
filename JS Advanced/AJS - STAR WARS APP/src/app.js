@@ -57,6 +57,12 @@ let navigationService = {
             }
 
         });
+
+        //Mislam deka kopcinjata za first i last page ne mi funkcioniraat kako sto treba.
+        // Ocekuvam koga ke kliknam na peopleBtn i koga ke ja izgenerira prvata strana so lugje,
+        // posle da kliknam na last page i da mi gi dade site od poslednata strana..
+        // So FirstPage funkcionira ama so Last ne saka, kako da go popravam toa.. 
+
         // FIRST PAGE BUTTON
         this.firstPageButton.addEventListener("click", function () {
             
